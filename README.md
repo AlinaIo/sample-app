@@ -22,3 +22,5 @@ https://hapijs.com/plugins
 https://www.npmjs.com/package/faker  
 https://stackoverflow.com/questions/16122234/how-to-commit-a-change-with-both-message-and-description-from-the-command-li  
 https://dillinger.io/  
+https://www.nginx.com/resources/wiki/start/topics/examples/full/  
+https://stackoverflow.com/questions/33850836/  nginx-successfully-serves-static-assets-but-they-do-not-render-in-the-browser  
