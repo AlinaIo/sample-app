@@ -10,6 +10,15 @@ exports.plugin = {
     register: async function (server, options) {
         server.route({
             method: 'GET',
+            path: '/',
+            handler: async function (request, h) {
+                const data = { 'Description': 'Yep! I am the server!' }
+                return h.response(data).code(200)
+            }
+        });
+
+        server.route({
+            method: 'GET',
             path: '/mongo',
             handler: async function (request, h) {
                 const db = await mongo.mongoConnection();

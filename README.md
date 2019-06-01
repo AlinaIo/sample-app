@@ -13,7 +13,15 @@ The Nginx instance serves a React app static content (after build)
 The React app has a Login that stores the user in a mobx state. Login is possible only if the "existing connection" from the API returns 200.
 
 We have a 2 page menu:  
-First page has a button that once clicked calls the dummy data generation endpoint. Second page displayes aggregation time (from the third endpoint)  
+First page has a button that once clicked calls the dummy data generation endpoint.  
+Second page displayes aggregation time (from the third endpoint)  
+
+#### To run the application:  
+```git clone https://github.com/AlinaIo/sample-app.git```
+Go to the sample-app folder and just run:  
+```docker-compose up```
+server will be available at http://localhost:8080
+and client served by nginx at http://localhost
 
 Useful links:
 https://hapijs.com/tutorials  
@@ -23,4 +31,7 @@ https://www.npmjs.com/package/faker
 https://stackoverflow.com/questions/16122234/how-to-commit-a-change-with-both-message-and-description-from-the-command-li  
 https://dillinger.io/  
 https://www.nginx.com/resources/wiki/start/topics/examples/full/  
-https://stackoverflow.com/questions/33850836/  nginx-successfully-serves-static-assets-but-they-do-not-render-in-the-browser  
+https://stackoverflow.com/questions/33850836/nginx-successfully-serves-static-assets-but-they-do-not-render-in-the-browser  
+https://mobx.js.org/getting-started.html  
+https://www.youtube.com/watch?v=GQCJbRbA9Ms  
+https://github.com/Microsoft/vscode/issues/45071  
