@@ -5,4 +5,4 @@ WORKDIR /srv
 
 RUN /usr/local/bin/npm install
 
-EXPOSE 3000
+EXPOSE 8080
