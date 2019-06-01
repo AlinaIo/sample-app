@@ -2,7 +2,7 @@
 
 The project contains a docker-compose that starts 3 instances: Mongo, Node.js and Nginx.
 
-On the Node.js instance there is a HapiJS server with 3 endpoints:
+On the Node.js instance there is a HapiJS server with a plugin that exposes 3 endpoints:
 - 1 GET that checks connection to mongodb
 - 1 POST that generates dummy data
 - 1 endpoint that returns the data agregation time
@@ -12,9 +12,13 @@ On the Mongo instange there is a mongodb.
 The Nginx instance serves a React app static content (after build)
 The React app has a Login that stores the user in a mobx state. Login is possible only if the "existing connection" from the API returns 200.
 
-We have a 2 page menu:
-    First page has a button that once clicked calls the dummy data generation endpoint.
-    Second page displayes aggregation time (from the third endpoint)
+We have a 2 page menu:  
+First page has a button that once clicked calls the dummy data generation endpoint. Second page displayes aggregation time (from the third endpoint)  
 
 Useful links:
-https://hapijs.com/tutorials
+https://hapijs.com/tutorials  
+https://hapijs.com/tutorials/plugins  
+https://hapijs.com/plugins  
+https://www.npmjs.com/package/faker  
+https://stackoverflow.com/questions/16122234/how-to-commit-a-change-with-both-message-and-description-from-the-command-li  
+https://dillinger.io/  

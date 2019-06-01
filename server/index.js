@@ -1,7 +1,7 @@
-'use strict';
+require('dotenv').config();
 
 const Hapi = require('@hapi/hapi');
-
+const config = require('./config/config');
 const init = async () => {
 
     const server = Hapi.server({
@@ -9,13 +9,7 @@ const init = async () => {
         host: '0.0.0.0'
     });
 
-    server.route({
-        method: 'GET',
-        path:'/',
-        handler: (request, h) => {
-            return 'Hello World!';
-        }
-    });
+    await server.register(require('./plugins/plugin'));
 
     await server.start();
     console.log('Server running on %s', server.info.uri);

@@ -7,11 +7,20 @@ services:
       - mongo
     ports:
       - "3000:3000"
+    environment:
+      DB_URL: ${DB_URL}
+      DB_NAME: ${DB_NAME}
   mongo:
     container_name: mongo
     image: mongo:4.1
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+    volumes:
+      - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
   nginx: 
     image: nginx:alpine
     container_name: nginx
