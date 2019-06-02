@@ -17,11 +17,11 @@ First page has a button that once clicked calls the dummy data generation endpoi
 Second page displayes aggregation time (from the third endpoint)  
 
 #### To run the application:  
-```git clone https://github.com/AlinaIo/sample-app.git```
+```git clone https://github.com/AlinaIo/sample-app.git```  
 Go to the sample-app folder and just run:  
-```docker-compose up```
-server will be available at http://localhost:8080
-and client served by nginx at http://localhost
+```docker-compose up```  
+server will be available at http://localhost:8080  
+and client served by nginx at http://localhost  
 
 Useful links:
 https://hapijs.com/tutorials  

@@ -9,7 +9,7 @@ const init = async () => {
         host: '0.0.0.0'
     });
 
-    await server.register(require('./plugins/plugin'));
+    await server.register([require('./plugins/plugin'), require('hapi-response-time')]);
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
