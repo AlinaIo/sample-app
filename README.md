@@ -23,7 +23,7 @@ Go to the sample-app folder and just run:
 server will be available at http://localhost:8080  
 and client served by nginx at http://localhost  
 
-Useful links:
+Useful links:  
 https://hapijs.com/tutorials  
 https://hapijs.com/tutorials/plugins  
 https://hapijs.com/plugins  
@@ -38,3 +38,4 @@ https://github.com/Microsoft/vscode/issues/45071
 https://www.npmjs.com/package/hapi-response-time  
 https://stackoverflow.com/questions/49478518/  
 https://www.robinwieruch.de/create-react-app-mobx-decorators/store-somestore-is-not-available-make-sure-it-is-provided-by-some-provider  
+https://www.w3schools.com/css/css_navbar.asp?fbclid=IwAR1Q3NBB5KDjOv7TZLxwcGOEq0iHx3zoKJpGQ0Fbmy9QPVqLlhxnoWiGoIs  
