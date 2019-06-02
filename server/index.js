@@ -6,7 +6,10 @@ const init = async () => {
 
     const server = Hapi.server({
         port: 8080,
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        routes: {
+            cors: true
+        }
     });
 
     await server.register([require('./plugins/plugin'), require('hapi-response-time')]);

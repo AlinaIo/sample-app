@@ -55,7 +55,7 @@ exports.plugin = {
                     const db = await client.db(config.dbName);
                     const dummy = db.collection('dummy');
                     let fakeData = [];
-                    for (let i = 100; i >= 0; i--) {
+                    for (let i = 100; i >= 1; i--) {
                         // Create a person object.
                         const person = {
                                 name: faker.name.firstName(),

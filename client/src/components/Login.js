@@ -1,11 +1,18 @@
 import React from 'react';
 import {observer} from 'mobx-react';
+import { extendObservable } from 'mobx';
 import { Button, Input, Container, Header } from 'semantic-ui-react';
 
-export default observer(class Login extends React.Component {
-    componentWillUnmount() {
-        this.props.authStore.reset();
-    }
+export default observer(
+    class Login extends React.Component {
+        constructor(props) {
+            super(props);
+      
+            extendObservable(this, {
+              email: '',
+              password: '',
+            });
+          }
 
     onSubmit = () => {
         const { email, password } = this;

@@ -4,13 +4,6 @@
   "homepage": "./",
   "private": true,
   "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
     "mobx": "^5.9.4",
     "mobx-react": "^6.0.2",
     "react": "^16.8.6",
