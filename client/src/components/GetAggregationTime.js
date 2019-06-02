@@ -31,12 +31,12 @@ class GetAggregationTime extends React.Component {
 
         if(typeof this.state.time == 'number') {
             return(
-                <p>Aggregation took {this.state.time} milliseconds..</p>
+                <p className="button-text">Aggregation took {this.state.time} milliseconds...</p>
             );  
         }
 
         return(
-            <p>Something went wrong..</p>
+            <p className="button-text">Something went wrong...</p>
         );
     }              
 }

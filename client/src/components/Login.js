@@ -1,6 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Button, Input, Container, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
+import '../styles/Login.css'
 
 @inject('authStore')
 @observer
@@ -24,7 +25,7 @@ class Login extends React.Component {
         e.preventDefault();
 
         const loggedIn = await this.props.authStore.login()
-        
+
         if (!loggedIn) {
             this.setState({
                 loginError: true
@@ -44,27 +45,40 @@ class Login extends React.Component {
 
         return (
             <Container text>
-                <Header as='h2'>Login</Header>
-                <Input 
-                    name='email' 
-                    onChange={this.handleEmailChange} 
-                    value={values.email} 
-                    required={true}
-                    placeholder='Email' 
-                    fluid 
-                    error
-                />
-                <Input
-                    name='password'
-                    onChange={this.handlePasswordChange} 
-                    value={values.password} 
-                    required={true}
-                    type='password'
-                    placeholder='Password' 
-                    fluid 
-                    error
-                />
-                <Button onClick={this.handleSubmit}>Submit</Button>
+                <div className="lr-wrapper" align="center">
+                    <div className="lr-content">
+                        <div className="lr-main">
+                        <form id="l-f">
+                            <input 
+                                type="text" 
+                                id="username_login" 
+                                name="l-username" 
+                                className="l-username" 
+                                placeholder='Email' 
+                                onChange={this.handleEmailChange} 
+                                value={values.email} 
+                                required={true}
+                            />
+                            <input 
+                                type="password" 
+                                id="password_login" 
+                                name="l-password" 
+                                className="l-password" 
+                                placeholder="Password"
+                                onChange={this.handlePasswordChange} 
+                                value={values.password} 
+                                required={true}
+                            />
+                            <button 
+                                onClick={this.handleSubmit}
+                                type="submit" 
+                                name="l-submit" 
+                                className="l-submit">Login
+                            </button>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
             </Container>
         );
     }

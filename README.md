@@ -39,3 +39,6 @@ https://www.npmjs.com/package/hapi-response-time
 https://stackoverflow.com/questions/49478518/  
 https://www.robinwieruch.de/create-react-app-mobx-decorators/store-somestore-is-not-available-make-sure-it-is-provided-by-some-provider  
 https://www.w3schools.com/css/css_navbar.asp?fbclid=IwAR1Q3NBB5KDjOv7TZLxwcGOEq0iHx3zoKJpGQ0Fbmy9QPVqLlhxnoWiGoIs  
+https://codepen.io/tkraak/pen/pbwJVN?fbclid=IwAR3-CbmfZltbRdL2cxlp03kYd2uf_tPLGR2dIGglhlK_5IsjX9Wb00dr3q0  
+https://codepen.io/tristanS26/pen/MyYZjX  
+https://codepen.io/fliao/pen/wrKYWN  

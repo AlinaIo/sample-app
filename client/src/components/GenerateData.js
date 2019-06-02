@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import '../styles/GenerateData.css'
 
 @inject('authStore')
 @observer
@@ -30,10 +31,12 @@ class GenerateData extends React.Component {
         }
 
         return(
-            <div>
-                <button onClick={this.handleClick}>Generate Data!</button>
-                { this.state.isRequestSuccessful && <p>Dummy data was added to DB!</p> }
-            </div>
+            <>
+                <div className="big-button-space">
+                    <div className="big-button" onClick={this.handleClick}></div>                    
+                </div>
+                { this.state.isRequestSuccessful && <p className="button-text">Dummy data was added to DB!</p> }
+            </>
         )
     }
 }
