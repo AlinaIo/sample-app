@@ -15,8 +15,7 @@ exports.plugin = {
             path: '/',
             handler: async function (request, h) {
                 const data = { 'Description': 'Yep! I am the server!' }
-                return h.response(data).code(200)
-                
+                return h.response(data).code(200);
             }
         });
 
@@ -79,7 +78,7 @@ exports.plugin = {
 
         server.route({
             method: 'GET',
-            path: '/time',
+            path: '/aggregate',
             handler: async function (request, h) {       
                 let client;
 
@@ -88,6 +87,7 @@ exports.plugin = {
                     const db = await client.db(config.dbName);
                     
                     const col = db.collection('dummy');
+                    let timeStart=Date.now();
                     col.aggregate( 
                         [ 
                             { $match : { country : "Norway" } } ,
@@ -96,9 +96,9 @@ exports.plugin = {
                             assert.equal(null, err);
                             console.log(doc);
                         });
-                    let head = h.headers;
-                    console.log(head);
-                    return h.response().code(200);
+                    let responseTime = Date.now() - timeStart;
+                    let data = { 'ResponseTime': responseTime }
+                    return h.response(data).code(200);
                 } catch(error) {
                     console.log('============' + error);
                     return Boom.serverUnavailable("MongoDB is not available!");

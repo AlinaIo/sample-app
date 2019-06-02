@@ -9,10 +9,10 @@ class GenerateData extends React.Component {
     }
 
     handleClick = async () => {
-        const genereated = await fetch('http://localhost:8080/dummy', {
+        const generated = await fetch('http://localhost:8080/dummy', {
             method: 'post'
         });
-        if(genereated.status === 201) {
+        if(generated.status === 201) {
             this.setState({
                 isRequestSuccessful: true
             })
