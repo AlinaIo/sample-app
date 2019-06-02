@@ -1,8 +1,6 @@
 import { observable, action } from 'mobx';
 
 class AuthStore {
-    @observable inProgress = false;
-    @observable errors = undefined;
   
     @observable values = {
       email: '',
@@ -24,14 +22,11 @@ class AuthStore {
     }
     
     @action async login() {
-      this.inProgress = true;
-      this.errors = undefined;
-
       try {
         const res = await fetch('http://localhost:8080/mongo');
 
         if (res.status === 200) {
-          this.isLoggedIn = true;
+          this.values.isLoggedIn = true;
   
           return true;
         }

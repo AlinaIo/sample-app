@@ -15,6 +15,7 @@ exports.plugin = {
             path: '/',
             handler: async function (request, h) {
                 const data = { 'Description': 'Yep! I am the server!' }
+
                 return h.response(data).code(200);
             }
         });
@@ -29,13 +30,16 @@ exports.plugin = {
                     client = await mongoClient.mongoConnection();
                     if(client.error) {
                         console.log('============' + client.error);
+
                         return Boom.serverUnavailable("MongoDB is not available!");
                     }
 
                     const data = { 'Description': 'MongoDB is up and running!' }
+
                     return h.response(data).code(200)
                 } catch(error) {
                     console.log('============' + error);
+
                     return Boom.serverUnavailable("MongoDB is not available!");
                 } finally {
                     client.close();
@@ -54,7 +58,8 @@ exports.plugin = {
                     const db = await client.db(config.dbName);
                     const dummy = db.collection('dummy');
                     let fakeData = [];
-                    for (let i = 100; i >= 1; i--) {
+
+                    for (let i = 300; i >= 1; i--) {
                         // Create a person object.
                         const person = {
                                 name: faker.name.firstName(),
@@ -66,9 +71,11 @@ exports.plugin = {
                         fakeData.push(person);
                     }
                     await dummy.insertMany(fakeData);
+
                     return h.response("Documents added to MongoDB.").code(201);
                 } catch(error) {
                     console.log('============' + error);
+
                     return Boom.badImplementation('Failed to insert document.');
                 } finally {
                     client.close();
@@ -84,10 +91,10 @@ exports.plugin = {
 
                 try {                    
                     client = await mongoClient.mongoConnection();
-                    const db = await client.db(config.dbName);
-                    
+                    const db = await client.db(config.dbName);                    
                     const col = db.collection('dummy');
                     let timeStart=Date.now();
+
                     col.aggregate( 
                         [ 
                             { $match : { country : "Norway" } } ,
@@ -96,11 +103,14 @@ exports.plugin = {
                             assert.equal(null, err);
                             console.log(doc);
                         });
+
                     let responseTime = Date.now() - timeStart;
-                    let data = { 'ResponseTime': responseTime }
+                    let data = { 'responseTime': responseTime }
+
                     return h.response(data).code(200);
                 } catch(error) {
                     console.log('============' + error);
+
                     return Boom.serverUnavailable("MongoDB is not available!");
                 } finally {
                     client.close();

@@ -1,11 +1,18 @@
 import React from 'react';
-import '../App.css';
+import { inject, observer } from 'mobx-react';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+@inject('authStore')
+@observer
+class App extends React.Component {
+  render() {
+    const { isLoggedIn } = this.props.authStore.values;
+
+    if (!isLoggedIn) {
+      this.props.history.push('/login');
+    }
+
+    return ''
+  }
 }
 
 export default App;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/Menu.css';
 
 const Menu = () => {
@@ -6,13 +7,12 @@ const Menu = () => {
         <header>
             <nav>
                 <ul>
-                    <li><a className="active" href="generate">Generate Data</a></li>
-                    <li><a href="time">Aggregation Time</a></li>
+                    <li><NavLink to="generate">Generate Data</NavLink></li>
+                    <li><NavLink to="time">Aggregation Time</NavLink></li>
                 </ul>
             </nav>
         </header>
     );
-
 }
 
 export default Menu;

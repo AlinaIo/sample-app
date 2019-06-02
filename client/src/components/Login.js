@@ -7,6 +7,7 @@ import { Button, Input, Container, Header } from 'semantic-ui-react';
 class Login extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             loginError: false
         }
@@ -21,14 +22,15 @@ class Login extends React.Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+
         const loggedIn = await this.props.authStore.login()
-        console.log('----------' + loggedIn);
+        
         if (!loggedIn) {
             this.setState({
                 loginError: true
             });
         } else {
-            this.props.history.push('/');
+            this.props.history.push('/generate');
         }
     };
 

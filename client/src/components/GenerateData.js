@@ -1,5 +1,8 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 
+@inject('authStore')
+@observer
 class GenerateData extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +15,7 @@ class GenerateData extends React.Component {
         const generated = await fetch('http://localhost:8080/dummy', {
             method: 'post'
         });
+        
         if(generated.status === 201) {
             this.setState({
                 isRequestSuccessful: true
@@ -19,6 +23,12 @@ class GenerateData extends React.Component {
         }
     }
     render() {
+        const { isLoggedIn } = this.props.authStore.values;
+        
+        if(!isLoggedIn) {
+            this.props.history.push('/login');
+        }
+
         return(
             <div>
                 <button onClick={this.handleClick}>Generate Data!</button>
