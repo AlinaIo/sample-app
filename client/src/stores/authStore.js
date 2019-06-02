@@ -7,6 +7,7 @@ class AuthStore {
     @observable values = {
       email: '',
       password: '',
+      isLoggedIn: false
     };
 
     @action setEmail(email) {
@@ -18,15 +19,28 @@ class AuthStore {
     }
 
     @action reset() {
-      this.values.username = '';
       this.values.email = '';
       this.values.password = '';
     }
     
-    @action login() {
+    @action async login() {
       this.inProgress = true;
       this.errors = undefined;
-      return true;
+
+      try {
+        const res = await fetch('http://localhost:8080/mongo');
+
+        if (res.status === 200) {
+          this.isLoggedIn = true;
+  
+          return true;
+        }
+        
+        return false;
+      } catch(error) {
+        return false;
+      }
+      
     }
 }
 

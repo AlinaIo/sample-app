@@ -4,11 +4,16 @@ import './index.css';
 import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
 import { Container } from 'semantic-ui-react';
+import { Provider } from "mobx-react";
+import AuthStore from "./stores/authStore";
 
 const App = (
-    <Container>
-      <Routes />
-    </Container>
+    <Provider authStore={AuthStore}>
+      <Container>
+        <Routes />
+      </Container>
+    </Provider>
+    
   );
 
 ReactDOM.render(App, document.getElementById('root'));

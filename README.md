@@ -35,3 +35,6 @@ https://stackoverflow.com/questions/33850836/nginx-successfully-serves-static-as
 https://mobx.js.org/getting-started.html  
 https://www.youtube.com/watch?v=GQCJbRbA9Ms  
 https://github.com/Microsoft/vscode/issues/45071  
+https://www.npmjs.com/package/hapi-response-time  
+https://stackoverflow.com/questions/49478518/  
+https://www.robinwieruch.de/create-react-app-mobx-decorators/store-somestore-is-not-available-make-sure-it-is-provided-by-some-provider  
